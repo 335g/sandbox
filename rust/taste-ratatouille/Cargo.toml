@@ -1,0 +1,12 @@
+[package]
+name = "taste-ratatouille"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+color-eyre = "0.6.5"
+fake = "4.3.0"
+rand = "0.9.1"
+ratatui = { version = "0.29.0", features = ["widget-calendar"] }
+serde = { version = "1.0.219", features = ["derive"] }
+time = { version = "0.3.41", features = ["local-offset"] }

@@ -1,0 +1,15 @@
+Info Created .vscode/extensions.json with dbt extension recommendation
+Success Project created successfully!
+Info Project name: data-pipeline
+Info Project directory: data-pipeline
+Info Setting up your profile...
+Success Profile written to /Users/335g/.dbt/profiles.yml
+Validating profile inputs, adapters, and connection
+
+   Loading ~/.dbt/profiles.yml
+  Fetching packages.yml
+Installing packages
+   Loading dbt_project.yml
+   Loading dbt_packages/dbt_utils/dbt_project.yml
+   Loading dbt_internal_packages/dbt-adapters/dbt_project.yml
+   Loading dbt_internal_packages/dbt-snowflake/dbt_project.yml

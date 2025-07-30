@@ -1,7 +1,7 @@
 use anyhow::Result;
 use serde_json::json;
 
-use crate::response::send_message;
+use crate::{response::send_message, save};
 
 pub async fn initialize(id: u64) -> Result<()> {
     send_message(
@@ -13,6 +13,6 @@ pub async fn initialize(id: u64) -> Result<()> {
             }
         })
     ).await?;
-    
+    save("send initialize response").await?;
     Ok(())
 }

@@ -1,7 +1,6 @@
-use std::io::Write as _;
-
 use serde_json::json;
 use anyhow::Result;
+use tokio::io::AsyncWriteExt;
 
 use crate::Message;
 
@@ -20,9 +19,9 @@ pub async fn log_message(msg: &str) -> Result<()> {
 pub async fn send_message(msg: serde_json::Value) -> Result<()> {
     let msg = Message::new(msg);
 
-    let stdout = std::io::stdout();
-    let mut locked = stdout.lock();
-    writeln!(locked, "{}", msg.to_string())?;
+    let mut stdout = tokio::io::stdout();
+    stdout.write_all(msg.to_string().as_bytes()).await?;
+    stdout.flush().await?;
     Ok(())
 }
 
